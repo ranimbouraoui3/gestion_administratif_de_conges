@@ -4,17 +4,16 @@ import { DropdownLoggedIn } from "../Elements/DropdownLoggedIn";
 import { DropdownLoggedOut } from "../Elements/DropdownLoggedOut";
 import { useEffect, useState } from "react";
 
-
 export const Header = () => {
-    const [dropdown, setDropdown] = useState(false);
-    const [activeTab, setActiveTab] = useState(""); // État pour suivre l'onglet actif
+    const [dropdown, setDropdown] = useState(true);
+    const [activeTab, setActiveTab] = useState("account"); // État pour suivre l'onglet actif
 
     const activeClass =
         "block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent";
     const inActiveClass =
         "block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent";
 
-    const user11 = false;
+    const user11 = true;
 
 
     const [darkMode, setDarkMode] = useState(
@@ -35,7 +34,7 @@ export const Header = () => {
     };
 
     return (
-        <header className="fixed top-0 left-0 w-full z-50">
+        <header >
             <nav className="bg-white border-b-2 border-gray-200 dark:bg-gray-900 dark:border-gray-700">
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                     <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
@@ -45,7 +44,9 @@ export const Header = () => {
                         </span>
                     </Link>
                     <div className="w-full md:block md:w-auto">
-                        <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                        <ul className="flex flex-col items-center h-full font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50
+    md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white
+    dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                             <li>
                                 <NavLink
                                     to="/"

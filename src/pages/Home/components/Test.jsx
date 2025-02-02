@@ -1,6 +1,8 @@
 import video from "../../../assets/video/video1.mp4";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+
+state.userState.loggedIn = undefined;
 export const Test = () => {
     const user = useSelector((state) => state.userState.user);
     const user11 = useSelector((state) => state.userState.loggedIn);
@@ -24,7 +26,7 @@ export const Test = () => {
                 <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight  md:text-5xl lg:text-6xl text-white">
                     Get back to growth with{" "}
                     <span className="text-blue-600 dark:text-blue-500">
-            the world s #1{" "}
+            the world's #1{" "}
           </span>
                     Leave Management System
                 </h1>
