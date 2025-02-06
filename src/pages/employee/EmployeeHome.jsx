@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 //import {useState} from "react";
+import { Users } from "../admin/Users.jsx"
 export const EmployeeHome = () => {
     const activeClass =
         "inline-flex items-center justify-center p-4 text-blue-600 border-b-2 border-blue-600 rounded-t-lg active dark:text-blue-500 dark:border-blue-500 group";
@@ -117,8 +118,8 @@ export const EmployeeHome = () => {
                 </ul>
             </div>
 
-            <div className="p-4 flex-1">
-                <p>Content goes here...</p>
+            <div >
+               <Users/>
             </div>
         </main>
     );
