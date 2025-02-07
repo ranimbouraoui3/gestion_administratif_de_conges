@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
+import {Outlet} from "react-router-dom"
 //import {useState} from "react";
-import { Users } from "../admin/Users.jsx"
 export const EmployeeHome = () => {
     const activeClass =
         "inline-flex items-center justify-center p-4 text-blue-600 border-b-2 border-blue-600 rounded-t-lg active dark:text-blue-500 dark:border-blue-500 group";
@@ -34,7 +34,7 @@ export const EmployeeHome = () => {
                     </li>
                     <li className="me-2">
                         <NavLink
-                            to="/admin/dashboard"
+                            to="/employee/dashboard"
                             className={({ isActive }) =>
                                 isActive ? activeClass : inActiveClass
                             }
@@ -53,7 +53,7 @@ export const EmployeeHome = () => {
                     </li>
                     <li className="me-2">
                         <NavLink
-                            to="/admin/demandes"
+                            to="/employee/demandes"
                             className={({ isActive }) =>
                                 isActive ? activeClass : inActiveClass
                             }
@@ -74,7 +74,7 @@ export const EmployeeHome = () => {
 
                     <li className="me-2">
                         <NavLink
-                            to="/admin/fichiers"
+                            to="/employee/fichiers"
                             className={({ isActive }) =>
                                 isActive ? activeClass : inActiveClass
                             }
@@ -95,7 +95,7 @@ export const EmployeeHome = () => {
 
                     <li className="me-2">
                         <NavLink
-                            to="/admin/taches"
+                            to="/employee/taches"
                             className={({ isActive }) =>
                                 isActive ? activeClass : inActiveClass
                             }
@@ -118,8 +118,8 @@ export const EmployeeHome = () => {
                 </ul>
             </div>
 
-            <div >
-               <Users/>
+            <div className="p-4">
+                <Outlet />
             </div>
         </main>
     );

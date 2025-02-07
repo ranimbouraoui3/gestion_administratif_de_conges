@@ -37,7 +37,8 @@ export const HomePage = () => {
 
     return (
         <>
-            <main>
+            <main className="w-full max-w-screen-lg mx-auto">
+
                 <Hero />
                 <section>
                     <h2>API Data:</h2>

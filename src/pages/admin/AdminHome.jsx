@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import {NavLink, Outlet} from "react-router-dom";
 import {Users} from "./Users.jsx"
 
 export const AdminHome = () => {
@@ -51,7 +51,7 @@ export const AdminHome = () => {
                     </li>
                     <li className="me-2">
                         <NavLink
-                            to="/admin/users"
+                            to="/admin/employee"
                             className={({ isActive }) =>
                                 isActive ? activeClass : inActiveClass
                             }
@@ -67,12 +67,94 @@ export const AdminHome = () => {
                             Employés
                         </NavLink>
                     </li>
+                    <li className="me-2">
+                        <NavLink
+                            to="/admin/conges"
+                            className={({ isActive }) =>
+                                isActive ? activeClass : inActiveClass
+                            }
+                        >
+                            {/* Icône de congés (Calendrier) */}
+                            <svg
+                                className="w-4 h-4 me-2 text-gray-400 group-hover:text-gray-500 dark:text-gray-500 dark:group-hover:text-gray-300"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 16H5V10h14Zm-7-8h5v5h-5Z" />
+                            </svg>
+                            Demandes congés
+                        </NavLink>
+                    </li>
+
+                    <li className="me-2">
+                        <NavLink
+                            to="/admin/fichiers"
+                            className={({ isActive }) =>
+                                isActive ? activeClass : inActiveClass
+                            }
+                        >
+                            {/* Icône de documents */}
+                            <svg
+                                className="w-4 h-4 me-2 text-gray-400 group-hover:text-gray-500 dark:text-gray-500 dark:group-hover:text-gray-300"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Zm2 16H8V4h5v4h3Zm-4-8H9v2h3Zm4 4H9v2h7Z" />
+                            </svg>
+                            fichier administratif
+                        </NavLink>
+                    </li>
+
+                    <li className="me-2">
+                        <NavLink
+                            to="/admin/taches"
+                            className={({ isActive }) =>
+                                isActive ? activeClass : inActiveClass
+                            }
+                        >
+                            {/* Icône de liste de tâches */}
+                            <svg
+                                className="w-4 h-4 me-2 text-gray-400 group-hover:text-gray-500 dark:text-gray-500 dark:group-hover:text-gray-300"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path d="M4 5h16V7H4Zm0 4h10V11H4Zm0 4h16v2H4Zm0 4h10v2H4Z" />
+                            </svg>
+                            Tâches
+                        </NavLink>
+                    </li>
+                    <li className="me-2">
+                        <NavLink
+                            to="/admin/statistique"
+                            className={({ isActive }) =>
+                                isActive ? activeClass : inActiveClass
+                            }
+                        >
+                            <svg
+                                className="w-4 h-4 me-2 text-gray-400 group-hover:text-gray-500 dark:text-gray-500 dark:group-hover:text-gray-300"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path d="M3 21h18v-2H3Zm2-4h3v-5H5Zm5 0h3V7h-3Zm5 0h3V3h-3Z" />
+                            </svg>
+                            statistique
+                        </NavLink>
+                    </li>
+
+
                 </ul>
             </div>
 
-            <div className="p-4 flex-1">
-                <p>Content goes here...</p>
-                <Users />
+            <div className="p-4">
+                <Outlet />
             </div>
         </main>
     );

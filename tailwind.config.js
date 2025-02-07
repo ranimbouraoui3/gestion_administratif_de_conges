@@ -13,6 +13,6 @@ export default {
         darkbg:"#1E293B",
       },},
   },
-  plugins: [flowbite],
+  plugins: [require("flowbite/plugin")],
 }
 
