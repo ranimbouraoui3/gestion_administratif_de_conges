@@ -1,0 +1,96 @@
+/* Testimonials Section */
+.testimonials-section {
+    padding: 80px 0;
+    background-color: #fff; /* Changed to white for no grey background */
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Title */
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* Testimonial Container */
+.testimonial-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Testimonial Card */
+.testimonial-card {
+    background: #fff; /* White background for the cards */
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect for Testimonial Card */
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Testimonial Text */
+.testimonial-text {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Testimonial Name */
+.testimonial-name {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Testimonial Role */
+.testimonial-role {
+    font-size: 0.9rem;
+    color: gray;
+}
+
+/* Arrow Button */
+.arrow-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+}
+
+.arrow-button.left {
+    left: -50px;
+}
+
+.arrow-button.right {
+    right: -50px;
+}
+
+/* Hover Effect for Arrow Button */
+.arrow-button:hover {
+    color: #007bff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .testimonial-card {
+        padding: 20px;
+    }
+}

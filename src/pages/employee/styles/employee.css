@@ -1,0 +1,38 @@
+ /* Bounce Animation for Name Box */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    30% { transform: translateY(-5px); }
+    50% { transform: translateY(2px); }
+    70% { transform: translateY(-3px); }
+    100% { transform: translateY(0); }
+}
+
+/* Name Box Styling */
+.name-box {
+    display: inline-block; /* Inline for the name */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for movement */
+}
+
+/* Hover Effect for Name Box */
+.name-box:hover {
+    animation: bounce 0.5s ease-out;
+    transform: scale(1.1) translateY(-5px); /* Slight scaling and vertical movement */
+    color: #3b82f6; /* Optional color change on hover */
+}
+
+/* Hover Effect for Other Elements (like fields or buttons) */
+.flex-grow div:hover {
+    transform: translateX(5px); /* Horizontal movement on hover */
+    transition: transform 0.3s ease;
+}
+
+button:hover {
+    transform: translateX(5px); /* Horizontal movement on hover */
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effect for Editable Fields */
+.bg-gray-100:hover {
+    background-color: #e5e7eb;
+    transition: background-color 0.2s ease;
+}

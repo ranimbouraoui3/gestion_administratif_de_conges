@@ -63,7 +63,7 @@ export const AdminProfile = () => {
                                 {item.value || "—"} {/* Si vide, affiche un tiret */}
                             </div>
                             {/* Icône de modification collée à droite du box */}
-                            <button className="absolute right-2 top-1/2 transform -translate-y-1/2 text-blue-500 hover:text-blue-700">
+                            <button className="absolute right-2 top-1/2 transform -translate-y-1/2 text-blue-500 hover:text-blue-700 hover:scale-110 transition-all duration-200">
                                 <i className="bi bi-pencil-square text-xl"></i>
                             </button>
                         </div>

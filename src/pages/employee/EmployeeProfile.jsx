@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import "./styles/employee.css"
 export const EmployeeProfile = () => {
     const [employee, setEmployee] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -39,7 +39,13 @@ export const EmployeeProfile = () => {
 
     return (
         <div className="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-12 mt-10 mb-14">
-            <h2 className="text-2xl font-bold text-center mb-6">Profil de {employee.nom} {employee.prenom}</h2>
+            <h2 className="text-2xl font-bold text-center mb-6">
+                Profil de
+                <span className="name-box">
+                  {employee.nom} {employee.prenom}
+                </span>
+            </h2>
+
 
             <div className="space-y-4">
                 {[
@@ -56,16 +62,13 @@ export const EmployeeProfile = () => {
                     { label: "Handicap", value: employee.handicap ? "Oui" : "Non" }
                 ].map((item, index) => (
                     <div key={index} className="flex items-center">
-                        {/* Label encore plus large */}
                         <p className="font-semibold text-gray-700 w-60">{item.label} :</p>
 
-                        {/* Boîte contenant la valeur */}
                         <div className="flex-grow relative">
                             <div className="bg-gray-100 p-3 rounded-lg shadow-sm text-gray-700 h-12 flex items-center truncate w-full min-w-[200px] md:min-w-[325px] lg:min-w-[425px]">
-                                {item.value || "—"} {/* Si vide, affiche un tiret */}
+                                {item.value || "—"}
                             </div>
-                            {/* Icône de modification collée à droite du box */}
-                            <button className="absolute right-2 top-1/2 transform -translate-y-1/2 text-blue-500 hover:text-blue-700">
+                            <button className="absolute right-2 top-1/2 transform -translate-y-1/2 text-blue-500 hover:text-blue-700 hover:scale-110 transition-all duration-200">
                                 <i className="bi bi-pencil-square text-xl"></i>
                             </button>
                         </div>

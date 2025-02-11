@@ -1,0 +1,73 @@
+/* Hero Section Styles */
+.hero-container {
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 30px; /* Add margin-bottom for spacing */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white; /* Ensure no gray background */
+}
+
+.hero-card {
+    background-color: #fff;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hero-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Updated Button Design */
+.learn-more-btn {
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    background-color: #1d4ed8; /* Blue-700 */
+    max-width: 9rem; /* Equivalent to max-w-36 */
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.learn-more-btn:hover {
+    background-color: #e0f2fe; /* Blue-100 */
+    color: #1e293b; /* Slate-900 */
+}
+
+.learn-more-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5); /* Focus Ring Blue-300 */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-card {
+        padding: 20px;
+    }
+}

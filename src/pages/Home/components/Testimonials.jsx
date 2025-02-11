@@ -1,89 +1,68 @@
-export const Testimonials = () => {
+
+import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { ChevronLeft, ChevronRight } from "lucide-react"
+import "./styles/Testimonials.css"
+
+const testimonials = [
+    {
+        name: "John Doe",
+        role: "Frontend Developer",
+        content:
+            "ReactIdeas has revolutionized the way I build web applications. The components are intuitive and the performance is outstanding.",
+    },
+    {
+        name: "Jane Smith",
+        role: "UX Designer",
+        content:
+            "I love how ReactIdeas combines beautiful design with powerful functionality. It's a game-changer for creating engaging user experiences.",
+    },
+    {
+        name: "Mike Johnson",
+        role: "Product Manager",
+        content:
+            "The flexibility and ease of use of ReactIdeas have significantly sped up our development process. Highly recommended!",
+    },
+]
+
+export default function Testimonials() {
+    const [currentIndex, setCurrentIndex] = useState(0)
+
+    const nextTestimonial = () => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length)
+    }
+
+    const prevTestimonial = () => {
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length)
+    }
+
     return (
-        <section className="my-20">
-            <h1 className="text-2xl text-center font-semibold dark:text-slate-100 mb-5 underline underline-offset-8">
-                Students About OffTimeMaster
-            </h1>
-            <div className="grid mb-8 rounded-lg border border-gray-200 shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2">
-                <figure className="flex flex-col justify-center items-center p-8 text-center bg-white rounded-t-lg border-b border-gray-200 md:rounded-t-none md:rounded-tl-lg md:border-r dark:bg-gray-800 dark:border-gray-700">
-                    <blockquote className="mx-auto mb-4 max-w-2xl text-gray-500 lg:mb-8 dark:text-gray-400">
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                            Très facile à intégrer
-                        </h3>
-                        <p className="my-4 font-light">
-                            If you care for your time, I hands down would go with this.
-                        </p>
-                    </blockquote>
-                    <figcaption className="flex justify-center items-center space-x-3">
-                        <div className="space-y-0.5 font-medium dark:text-white text-left">
-                            <div>Ben Mahfoudh Fedi</div>
-                            <div className="text-sm font-light text-gray-500 dark:text-gray-400">
-                                Etudiant à lISIMM
-                            </div>
-                        </div>
-                    </figcaption>
-                </figure>
-                <figure className="flex flex-col justify-center items-center p-8 text-center bg-white rounded-tr-lg border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
-                    <blockquote className="mx-auto mb-4 max-w-2xl text-gray-500 lg:mb-8 dark:text-gray-400">
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                            Une base solide pour tout projet
-                        </h3>
-                        <p className="my-4 font-light">
-                            Super facile à utiliser ! J adore pouvoir demander mes congés en
-                            quelques clics et suivre leur statut en temps reel.
-                        </p>
-                    </blockquote>
-                    <figcaption className="flex justify-center items-center space-x-3">
-                        <div className="space-y-0.5 font-medium dark:text-white text-left">
-                            <div>Baccar Islem</div>
-                            <div className="text-sm font-light text-gray-500 dark:text-gray-400">
-                                Etudiant à lISIMM
-                            </div>
-                        </div>
-                    </figcaption>
-                </figure>
-                <figure className="flex flex-col justify-center items-center p-8 text-center bg-white rounded-bl-lg border-b border-gray-200 md:border-b-0 md:border-r dark:bg-gray-800 dark:border-gray-700">
-                    <blockquote className="mx-auto mb-4 max-w-2xl text-gray-500 lg:mb-8 dark:text-gray-400">
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                            Flux de travail époustouflant
-                        </h3>
-                        <p className="my-4 font-light">
-                            Cette application a vraiment simplifié notre processus de demande
-                            de congés en éliminant le besoin de formulaires papier. C est
-                            tellement pratique !
-                        </p>
-                    </blockquote>
-                    <figcaption className="flex justify-center items-center space-x-3">
-                        <div className="space-y-0.5 font-medium dark:text-white text-left">
-                            <div>Jguirim Seif</div>
-                            <div className="text-sm font-light text-gray-500 dark:text-gray-400">
-                                Etudiant à lISIMM
-                            </div>
-                        </div>
-                    </figcaption>
-                </figure>
-                <figure className="flex flex-col justify-center items-center p-8 text-center bg-white rounded-b-lg border-gray-200 md:rounded-br-lg dark:bg-gray-800 dark:border-gray-700">
-                    <blockquote className="mx-auto mb-4 max-w-2xl text-gray-500 lg:mb-8 dark:text-gray-400">
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                            Collaboration efficace
-                        </h3>
-                        <p className="my-4 font-light">
-                            J apprécie la fonctionnalité de planification des congés qui
-                            permet de visualiser facilement les périodes de congé de toute
-                            l équipe. Cela aide à coordonner les absences et à maintenir la
-                            productivité.
-                        </p>
-                    </blockquote>
-                    <figcaption className="flex justify-center items-center space-x-3">
-                        <div className="space-y-0.5 font-medium dark:text-white text-left">
-                            <div>Ben Jedou Naim</div>
-                            <div className="text-sm font-light text-gray-500 dark:text-gray-400">
-                                Etudiant à lISIMM
-                            </div>
-                        </div>
-                    </figcaption>
-                </figure>
+        <section id="testimonials" className="testimonials-section">
+            <div className="container">
+                <h2 className="title">What Our Users Say</h2>
+                <div className="testimonial-container">
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={currentIndex}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.5 }}
+                            className="testimonial-card"
+                        >
+                            <p className="testimonial-text">{testimonials[currentIndex].content}</p>
+                            <p className="testimonial-name">{testimonials[currentIndex].name}</p>
+                            <p className="testimonial-role">{testimonials[currentIndex].role}</p>
+                        </motion.div>
+                    </AnimatePresence>
+                    <button className="arrow-button left" onClick={prevTestimonial}>
+                        <ChevronLeft size={24} />
+                    </button>
+                    <button className="arrow-button right" onClick={nextTestimonial}>
+                        <ChevronRight size={24} />
+                    </button>
+                </div>
             </div>
         </section>
-    );
-};
+    )
+}
