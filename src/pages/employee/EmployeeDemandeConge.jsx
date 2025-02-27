@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import "./styles/employee.css";
-export const EmployeeDemande = () => {
+export const EmployeeDemandeConge = () => {
     const [formData, setFormData] = useState({
         nom: "",
         prenom: "",

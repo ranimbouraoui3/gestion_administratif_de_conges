@@ -8,7 +8,9 @@ import { Users } from "../pages/admin/Users.jsx";
 import { EmployeeProfile } from "../pages/employee/EmployeeProfile.jsx";
 import { EmployeeDashboard } from "../pages/employee/EmployeeDashboard.jsx";
 import { AdminProfile } from "../pages/admin/AdminProfile.jsx";
-import { EmployeeDemande } from "../pages/employee/EmployeeDemande.jsx";
+import { EmployeeDemandeConge } from "../pages/employee/EmployeeDemandeConge.jsx";
+import {EmployeeDemandeDocument} from "../pages/employee/EmployeeDemandeDocument.jsx";
+import { EmployeeTache } from "../pages/employee/EmployeeTache.jsx";
 
 export const AllRoutes = () => {
     return (
@@ -28,7 +30,12 @@ export const AllRoutes = () => {
             <Route path="/employee" element={<EmployeeHome />}>
                 <Route path="profile" element={<EmployeeProfile />} />
                 <Route path="dashboard" element={<EmployeeDashboard />} />
-                <Route path="demandes" element={<EmployeeDemande />} />
+                <Route path="demandes" element={<EmployeeDemandeConge />} />
+                <Route path="fichiers" element={<EmployeeDemandeDocument />} />
+                <Route path="taches" element={<EmployeeTache />
+                } />
+
+
                 {/*<Route path="fichiers" element={<EmployeeFichiers />} />*/}
                 {/*<Route path="taches" element={<EmployeeTaches />} />*/}
             </Route>
